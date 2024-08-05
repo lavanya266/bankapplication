@@ -1,0 +1,326 @@
+msis@localhost:~$ cd bankapplication/
+msis@localhost:~/bankapplication$ sudo git config --global user.email "lavanyab2612@gmail.com"
+[sudo] password for msis: 
+msis@localhost:~/bankapplication$ sudo git log
+commit 07d78443cab5ce4878fbe89e58d5837b689e73c6 (HEAD -> main)
+Author: root <root@localhost.localdomain>
+Date:   Mon Aug 5 12:07:27 2024 +0530
+
+    added home page
+
+commit 893b9d60543f8fec652878b3523150573314eb4a (origin/main, master)
+Author: Lavanya B <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 11:39:25 2024 +0530
+
+    Initial commit
+msis@localhost:~/bankapplication$ sudo git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+msis@localhost:~/bankapplication$ sudo git branch
+* main
+  master
+msis@localhost:~/bankapplication$ ls
+home.php  README.md
+msis@localhost:~/bankapplication$ sudo git push origin main
+Username for 'https://github.com': lavanya266
+Password for 'https://lavanya266@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/lavanya266/bankapplication.git/'
+msis@localhost:~/bankapplication$ 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
+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: command not found
+msis@localhost:~/bankapplication$ sudo git push origin main
+Username for 'https://github.com': lavanya266
+Password for 'https://lavanya266@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lavanya266/bankapplication.git
+   893b9d6..07d7844  main -> main
+msis@localhost:~/bankapplication$ sudo touch About.php Contact.php
+msis@localhost:~/bankapplication$ ls -l
+total 8
+-rw-r--r-- 1 root root  0 Aug  5 14:15 About.php
+-rw-r--r-- 1 root root  0 Aug  5 14:15 Contact.php
+-rw-r--r-- 1 msis msis 12 Aug  5 12:05 home.php
+-rw-r--r-- 1 root root 17 Aug  5 11:50 README.md
+msis@localhost:~/bankapplication$ sudo chown -R msis:msis  About.php Contact.php 
+msis@localhost:~/bankapplication$ ls -l
+total 8
+-rw-r--r-- 1 msis msis  0 Aug  5 14:15 About.php
+-rw-r--r-- 1 msis msis  0 Aug  5 14:15 Contact.php
+-rw-r--r-- 1 msis msis 12 Aug  5 12:05 home.php
+-rw-r--r-- 1 root root 17 Aug  5 11:50 README.md
+msis@localhost:~/bankapplication$ sudo cat > About.php 
+About Banking Application
+^C
+msis@localhost:~/bankapplication$ 
+msis@localhost:~/bankapplication$ sudo cat > Contact.php 
+Contact details
+^C
+msis@localhost:~/bankapplication$ 
+msis@localhost:~/bankapplication$ sudo git add -A
+msis@localhost:~/bankapplication$ sudo git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   About.php
+	new file:   Contact.php
+
+msis@localhost:~/bankapplication$ sudo git commit -a -m "added about and contact page"
+[main ec2cac1] added about and contact page
+ 2 files changed, 2 insertions(+)
+ create mode 100644 About.php
+ create mode 100644 Contact.php
+msis@localhost:~/bankapplication$ sudo git log
+commit ec2cac149ba80e8f438af0606773e55693fc29de (HEAD -> main)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:21:32 2024 +0530
+
+    added about and contact page
+
+commit 07d78443cab5ce4878fbe89e58d5837b689e73c6 (origin/main)
+Author: root <root@localhost.localdomain>
+Date:   Mon Aug 5 12:07:27 2024 +0530
+
+    added home page
+
+commit 893b9d60543f8fec652878b3523150573314eb4a (master)
+Author: Lavanya B <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 11:39:25 2024 +0530
+
+    Initial commit
+msis@localhost:~/bankapplication$ sudo git cat-file -p ec2cac149ba80e8f438af0606773e55693fc29de
+tree 972d91ee1d4e6d43d0cc341e8bd0bb43adff9a52
+parent 07d78443cab5ce4878fbe89e58d5837b689e73c6
+author root <lavanyab2612@gmail.com> 1722847892 +0530
+committer root <lavanyab2612@gmail.com> 1722847892 +0530
+
+added about and contact page
+msis@localhost:~/bankapplication$ sudo git cat-file -p 972d91ee1d4e6d43d0cc341e8bd0bb43adff9a52
+100644 blob 6a7aae1a901d7802eefd10c338b4a902d671921b	About.php
+100644 blob 2b092fdf82c5209ff159a51f6c3e3ff9c8eb0150	Contact.php
+100644 blob 433a7c403efba9c2770ed7b1f62b06a2f14a0897	README.md
+100644 blob 807085d11d59c5b2fc057af0bc1a146c9336a661	home.php
+msis@localhost:~/bankapplication$ sudo git push origin main
+Username for 'https://github.com': lavanya266
+Password for 'https://lavanya266@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 396 bytes | 396.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/lavanya266/bankapplication.git
+   07d7844..ec2cac1  main -> main
+msis@localhost:~/bankapplication$ sudo git branch
+* main
+  master
+msis@localhost:~/bankapplication$ sudo git branch transactions
+msis@localhost:~/bankapplication$ sudo git branch 
+* main
+  master
+  transactions
+msis@localhost:~/bankapplication$ sudo git checkout transactions 
+Switched to branch 'transactions'
+msis@localhost:~/bankapplication$ sudo git branch 
+  main
+  master
+* transactions
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md
+msis@localhost:~/bankapplication$ sudo touch transaction.php
+msis@localhost:~/bankapplication$ sudo chown -R msis:msis transaction.php 
+msis@localhost:~/bankapplication$ sudo cat > transaction.php 
+Page is for monetary transactions
+^C
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git status
+On branch transactions
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	transaction.php
+
+nothing added to commit but untracked files present (use "git add" to track)
+msis@localhost:~/bankapplication$ sudo git add -A
+msis@localhost:~/bankapplication$ sudo git status
+On branch transactions
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   transaction.php
+
+msis@localhost:~/bankapplication$ sudo git commit -a -m "added transaction page from transaction branch"
+[transactions 46f15f9] added transaction page from transaction branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 transaction.php
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git branch
+  main
+  master
+* transactions
+msis@localhost:~/bankapplication$ sudo git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+msis@localhost:~/bankapplication$ l
+About.php  Contact.php  home.php  README.md
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md
+msis@localhost:~/bankapplication$ sudo git branch
+* main
+  master
+  transactions
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md
+msis@localhost:~/bankapplication$ sudo git checkout transactions
+Switched to branch 'transactions'
+msis@localhost:~/bankapplication$ sudo git log
+commit 46f15f90919ca18ef03fc53ec7789f6cfd2f36d9 (HEAD -> transactions)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:41:48 2024 +0530
+
+    added transaction page from transaction branch
+
+commit ec2cac149ba80e8f438af0606773e55693fc29de (origin/main, main)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:21:32 2024 +0530
+
+    added about and contact page
+
+commit 07d78443cab5ce4878fbe89e58d5837b689e73c6
+Author: root <root@localhost.localdomain>
+Date:   Mon Aug 5 12:07:27 2024 +0530
+
+    added home page
+
+commit 893b9d60543f8fec652878b3523150573314eb4a (master)
+Author: Lavanya B <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 11:39:25 2024 +0530
+
+    Initial commit
+msis@localhost:~/bankapplication$ sudo git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+msis@localhost:~/bankapplication$ sudo git log
+commit ec2cac149ba80e8f438af0606773e55693fc29de (HEAD -> main, origin/main)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:21:32 2024 +0530
+
+    added about and contact page
+
+commit 07d78443cab5ce4878fbe89e58d5837b689e73c6
+Author: root <root@localhost.localdomain>
+Date:   Mon Aug 5 12:07:27 2024 +0530
+
+    added home page
+
+commit 893b9d60543f8fec652878b3523150573314eb4a (master)
+Author: Lavanya B <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 11:39:25 2024 +0530
+
+    Initial commit
+msis@localhost:~/bankapplication$ sudo git merge transactions 
+Updating ec2cac1..46f15f9
+Fast-forward
+ transaction.php | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 transaction.php
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git log
+commit 46f15f90919ca18ef03fc53ec7789f6cfd2f36d9 (HEAD -> main, transactions)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:41:48 2024 +0530
+
+    added transaction page from transaction branch
+
+commit ec2cac149ba80e8f438af0606773e55693fc29de (origin/main)
+Author: root <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 14:21:32 2024 +0530
+
+    added about and contact page
+
+commit 07d78443cab5ce4878fbe89e58d5837b689e73c6
+Author: root <root@localhost.localdomain>
+Date:   Mon Aug 5 12:07:27 2024 +0530
+
+    added home page
+
+commit 893b9d60543f8fec652878b3523150573314eb4a (master)
+Author: Lavanya B <lavanyab2612@gmail.com>
+Date:   Mon Aug 5 11:39:25 2024 +0530
+
+    Initial commit
+msis@localhost:~/bankapplication$ sudo git checkout transactions 
+Switched to branch 'transactions'
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo touch imps.php
+msis@localhost:~/bankapplication$ sudo chown -R msis:msis imps.php 
+msis@localhost:~/bankapplication$ sudo cat > imps.php 
+Transacton page
+^C
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  imps.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  imps.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git checkout transactions 
+Switched to branch 'transactions'
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  imps.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git stash 
+No local changes to save
+msis@localhost:~/bankapplication$ sudo git add -A
+msis@localhost:~/bankapplication$ sudo git stash 
+Saved working directory and index state WIP on transactions: 46f15f9 added transaction page from transaction branch
+msis@localhost:~/bankapplication$ sudo git checkout main 
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git checkout transactions 
+Switched to branch 'transactions'
+msis@localhost:~/bankapplication$ sudo git stash apply 
+On branch transactions
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   imps.php
+
+msis@localhost:~/bankapplication$ sudo git commit -a -m "imps page is added for quick transacton"
+[transactions 66ca35a] imps page is added for quick transacton
+ 1 file changed, 1 insertion(+)
+ create mode 100644 imps.php
+msis@localhost:~/bankapplication$ ls
+About.php  Contact.php  home.php  imps.php  README.md  transaction.php
+msis@localhost:~/bankapplication$ sudo git push origin transactions 
+Username for 'https://github.com': lavanya266
+Password for 'https://lavanya266@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 567 bytes | 567.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'transactions' on GitHub by visiting:
+remote:      https://github.com/lavanya266/bankapplication/pull/new/transactions
+remote: 
+To https://github.com/lavanya266/bankapplication.git
+ * [new branch]      transactions -> transactions
+msis@localhost:~/bankapplication$ 
+
